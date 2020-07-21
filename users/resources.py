@@ -1,6 +1,6 @@
+import json
 import logging
 from bson.json_util import dumps
-import json
 
 from flask import request, jsonify
 from flask_restful import Resource, reqparse
@@ -37,9 +37,9 @@ class Users(Resource):
             .only('_id', 'name', 'email') \
             .first()
 
-        user = user.to_json()
-
-        return json.loads(dumps(user)), 201 # Unlike Flask's jsonify, "dumps" will return a string, so it cannot be used as a 1:1 replacement of Flask's jsonify: https://stackoverflow.com/questions/16586180/typeerror-objectid-is-not-json-serializable
+        # use the below if you want to return the actual object id
+        #return json.loads(dumps(user)), 201 # Unlike Flask's jsonify, "dumps" will return a string, so it cannot be used as a 1:1 replacement of Flask's jsonify: https://stackoverflow.com/questions/16586180/typeerror-objectid-is-not-json-serializable
+        return user.to_json()
 
     def get(self):
         users = User.objects[:]

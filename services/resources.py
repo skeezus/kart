@@ -4,6 +4,14 @@ from flask_restful import Resource
 import json
 from urllib import request as urllib_request, parse
 
+
+"""
+# https://console.cloud.google.com/marketplace/browse?filter=solution-type:dataset&_ga=2.141073522.1717897459.1595025585-1272377440.1595025585&pli=1
+# https://catalog.data.gov
+# https://eerscmap.usgs.gov/uswtdb/
+# https://openai.com/blog/openai-api/
+"""
+
 class Geocode(object):
 
     #ACCESS_TOKEN = current_app.config['MAPBOX_ACCESS_KEY']

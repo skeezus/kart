@@ -9,12 +9,13 @@ class User(db.Document):
     name = db.StringField(max_length=100, required=True)
     email = db.EmailField(required=True)
     password = db.StringField(required=True)
+    
     meta = {
         'collection': 'users'
     }
 
     def to_json(self):
-        return {'id': self._id, 'name': self.name, 'email': self.email}
+        return {'id': str(self._id), 'name': self.name, 'email': self.email}
 
     #@staticmethod
     def encrypt_password(self, pass_raw):

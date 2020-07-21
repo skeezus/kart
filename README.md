@@ -15,6 +15,11 @@
 * remember we're not running mongo on the application server
 * start db server: `service mongodb start`
 
+## mongo auth
+* mongo
+* use admin
+* db.auth('root','pass');
+
 ## deployment setup
 * add git
 * create ssh key (if needed): https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
